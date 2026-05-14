@@ -8,35 +8,6 @@ Este projeto documenta uma jornada de modernização do PAM em camadas progressi
 
 O objetivo central não é apenas segurança — é **reduzir o atrito**. Uma plataforma bem construída torna o caminho seguro o caminho mais fácil.
 
----
-
-
-## Timeline de Modernização
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'cScale0': '#c0392b', 'cScale1': '#e67e22', 'cScale2': '#d4ac0d', 'cScale3': '#27ae60', 'cScale4': '#2980b9', 'cScale5': '#8e44ad'}}}%%
-timeline
-    title Evolucao do PAM Moderno
-    Camada 0 - Baseline : Cert + IP on-prem
-                        : IAM Role na cloud
-                        : KV Estatico / 2 Vaults
-    Camada 1 - Dynamic Secrets : TTL automatico
-                               : Revogacao imediata
-                               : Sem rotacao manual
-    Camada 2 - Workload Identity : Kubernetes Auth
-                                 : Sem secret_id
-                                 : Identidade do pod
-    Camada 3 - Policies e Audit : Least Privilege
-                                : Audit Log estruturado
-                                : Base para compliance
-    Camada 4 - Multi-Store : Vault + AWS SM + Azure KV
-                           : Abstracao de provider
-                           : App agnosta ao store
-    Camada 5 - Broker Semantico : Roteamento por contexto
-                                : Compliance por design
-                                : PAM Fabric
-```
-
 
 ---
 
@@ -211,13 +182,36 @@ flowchart LR
 
 ---
 
-## Próximos passos
+## Referências
 
-Os labs serão desenvolvidos de forma incremental, evoluindo o mesmo app Python a cada camada:
+### Padrões de Autenticação e Identidade
 
-- [ ] Camada 0 — App on-prem (cert + IP) e App AWS (IAM Role) com dois Vaults e KV estático
-- [ ] Camada 1 — Migração para Database Secrets Engine
-- [ ] Camada 2 — Autenticação via Kubernetes Auth
-- [ ] Camada 3 — Políticas granulares e audit log
-- [ ] Camada 4 — Secret Service com roteamento para Vault, AWS SM e Azure KV
-- [ ] Camada 5 — Broker semântico com roteamento por política
+- [AWS Credential Provider Chain](https://docs.aws.amazon.com/sdkref/latest/guide/standardized-credentials.html) — modelo de descoberta automática de credenciais que inspirou o design do Platform Client SDK
+- [GCP Application Default Credentials (ADC)](https://cloud.google.com/docs/authentication/application-default-credentials) — equivalente GCP ao Credential Provider Chain
+- [Azure Managed Identity](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/overview) — identidade de workload nativa da Azure
+- [SPIFFE / SPIRE](https://spiffe.io/) — padrão aberto de identidade para workloads, base para o conceito de Identity Resolution
+- [Kubernetes Auth Method — Vault](https://developer.hashicorp.com/vault/docs/auth/kubernetes) — autenticação via ServiceAccount JWT
+
+### Secrets Management
+
+- [HashiCorp Vault](https://developer.hashicorp.com/vault/docs) — cofre de segredos, base da arquitetura AS-IS e backend no TO-BE
+- [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html) — secrets manager nativo da AWS
+- [Azure Key Vault](https://learn.microsoft.com/en-us/azure/key-vault/general/overview) — cofre de segredos nativo da Azure
+- [Vault Dynamic Secrets](https://developer.hashicorp.com/vault/tutorials/db-credentials/database-secrets) — geração de credenciais efêmeras com TTL
+
+### Platform Engineering e Abstração
+
+- [Dapr Secrets Building Block](https://docs.dapr.io/developing-applications/building-blocks/secrets/secrets-overview/) — referência de mercado para abstração de secrets via sidecar
+- [Vault Agent Injector](https://developer.hashicorp.com/vault/docs/platform/k8s/injector) — injeção automática de segredos em pods Kubernetes
+- [Internal Developer Platform (IDP)](https://internaldeveloperplatform.org/) — conceito de plataforma interna que reduz o atrito do desenvolvedor
+
+### Policy Engine
+
+- [Open Policy Agent (OPA)](https://www.openpolicyagent.org/docs/latest/) — motor de política declarativa usado no roteamento semântico do Secrets Gateway
+- [OPA Rego Language](https://www.openpolicyagent.org/docs/latest/policy-language/) — linguagem de políticas do OPA
+
+### Conceitos e Arquitetura
+
+- [PAM Fabric](https://www.cyberark.com/what-is/pam/) — evolução do PAM tradicional para um modelo distribuído e integrado
+- [Zero Standing Privileges (ZSP)](https://www.crowdstrike.com/cybersecurity-101/zero-standing-privileges/) — eliminação de acessos privilegiados permanentes
+- [Platform Engineering](https://platformengineering.org/blog/what-is-platform-engineering) — disciplina de construção de plataformas internas para reduzir fricção de desenvolvedores
