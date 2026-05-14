@@ -1,0 +1,172 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3" pages="2">
+  <diagram id="asis" name="AS-IS — Baseline atual">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- ── CONTAINER: Workloads ── -->
+        <mxCell id="c1" value="Workloads" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;rounded=1;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="30" y="30" width="195" height="595" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" value="🐍 Data Center&lt;br&gt;on-prem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2980b9;fontColor=#ffffff;strokeColor=#1a5276;fontSize=12;arcSize=10;" vertex="1" parent="c1">
+          <mxGeometry x="17" y="45" width="161" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" value="🐍 AWS&lt;br&gt;EC2 / Lambda" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2980b9;fontColor=#ffffff;strokeColor=#1a5276;fontSize=12;arcSize=10;" vertex="1" parent="c1">
+          <mxGeometry x="17" y="150" width="161" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" value="🐍 Azure&lt;br&gt;VM / Functions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2980b9;fontColor=#ffffff;strokeColor=#1a5276;fontSize=12;arcSize=10;" vertex="1" parent="c1">
+          <mxGeometry x="17" y="255" width="161" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" value="🐍 GCP&lt;br&gt;Compute / Run" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2980b9;fontColor=#ffffff;strokeColor=#1a5276;fontSize=12;arcSize=10;" vertex="1" parent="c1">
+          <mxGeometry x="17" y="360" width="161" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" value="🐍 OCP / Huawei&lt;br&gt;OpenShift" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2980b9;fontColor=#ffffff;strokeColor=#1a5276;fontSize=12;arcSize=10;" vertex="1" parent="c1">
+          <mxGeometry x="17" y="465" width="161" height="88" as="geometry" />
+        </mxCell>
+        <!-- ── CONTAINER: Auth Method ── -->
+        <mxCell id="c2" value="Auth Method — por origem" style="swimlane;startSize=30;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1;rounded=1;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="280" y="30" width="225" height="595" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" value="📜 Cert Auth&lt;br&gt;+ IP binding" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;fontColor=#ffffff;strokeColor=#d35400;fontSize=12;arcSize=10;" vertex="1" parent="c2">
+          <mxGeometry x="17" y="45" width="191" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" value="☁️ AWS Auth Method&lt;br&gt;IAM Role" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;fontColor=#ffffff;strokeColor=#d35400;fontSize=12;arcSize=10;" vertex="1" parent="c2">
+          <mxGeometry x="17" y="150" width="191" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" value="🔷 Azure Auth Method&lt;br&gt;Managed Identity" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;fontColor=#ffffff;strokeColor=#d35400;fontSize=12;arcSize=10;" vertex="1" parent="c2">
+          <mxGeometry x="17" y="255" width="191" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" value="🌐 GCP Auth Method&lt;br&gt;Service Account" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;fontColor=#ffffff;strokeColor=#d35400;fontSize=12;arcSize=10;" vertex="1" parent="c2">
+          <mxGeometry x="17" y="360" width="191" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" value="🔑 Kubernetes Auth&lt;br&gt;ServiceAccount JWT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;fontColor=#ffffff;strokeColor=#d35400;fontSize=12;arcSize=10;" vertex="1" parent="c2">
+          <mxGeometry x="17" y="465" width="191" height="88" as="geometry" />
+        </mxCell>
+        <!-- ── CONTAINER: Cofres ── -->
+        <mxCell id="c3" value="Cofres — KV Estático" style="swimlane;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontSize=14;fontStyle=1;rounded=1;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="560" y="30" width="195" height="595" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" value="🔐 Vault on-prem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c0392b;fontColor=#ffffff;strokeColor=#922b21;fontSize=13;arcSize=10;" vertex="1" parent="c3">
+          <mxGeometry x="17" y="115" width="161" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="n12" value="🔐 Vault cloud" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#c0392b;fontColor=#ffffff;strokeColor=#922b21;fontSize=13;arcSize=10;" vertex="1" parent="c3">
+          <mxGeometry x="17" y="365" width="161" height="95" as="geometry" />
+        </mxCell>
+        <!-- ── EDGES: Workloads → Auth ── -->
+        <mxCell id="e1" value="cert + IP" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="n1" target="n6" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="IAM Role" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="n2" target="n7" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="Managed Identity" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="n3" target="n8" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="Service Account" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="n4" target="n9" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="JWT" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="n5" target="n10" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- ── EDGES: Auth → Vaults ── -->
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="n6" target="n11" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="n7" target="n12" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="n8" target="n12" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="n9" target="n12" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="n10" target="n12" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="tobe" name="TO-BE — Visão Target">
+    <mxGraphModel dx="1426" dy="875" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c1" value="Aplicação" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="30" y="30" width="195" height="595" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" value="🐍 App&lt;br&gt;qualquer linguagem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2980b9;fontColor=#ffffff;strokeColor=#1a5276;fontSize=12;arcSize=10;" parent="c1" vertex="1">
+          <mxGeometry x="17" y="100" width="161" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" value="📦 Platform Client SDK&lt;br&gt;auto-discover · cache · retry" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#8e44ad;fontColor=#ffffff;strokeColor=#6c3483;fontSize=12;arcSize=10;" parent="c1" vertex="1">
+          <mxGeometry x="17" y="375" width="161" height="115" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="get(secret)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="c1" source="n1" target="n2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="Secrets Gateway" style="swimlane;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;fontStyle=1;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="280" y="30" width="225" height="595" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" value="🪪 Identity Resolution&lt;br&gt;origem da workload" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#27ae60;fontColor=#ffffff;strokeColor=#1e8449;fontSize=12;arcSize=10;" parent="c2" vertex="1">
+          <mxGeometry x="17" y="45" width="191" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" value="🔐 Auth Engine&lt;br&gt;metodo por contexto" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#27ae60;fontColor=#ffffff;strokeColor=#1e8449;fontSize=12;arcSize=10;" parent="c2" vertex="1">
+          <mxGeometry x="17" y="165" width="191" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" value="📋 Policy Engine OPA&lt;br&gt;roteamento por politica" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#27ae60;fontColor=#ffffff;strokeColor=#1e8449;fontSize=12;arcSize=10;" parent="c2" vertex="1">
+          <mxGeometry x="17" y="285" width="191" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" value="📝 Audit Log&lt;br&gt;centralizado" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#7f8c8d;fontColor=#ffffff;strokeColor=#626567;fontSize=12;arcSize=10;" parent="c2" vertex="1">
+          <mxGeometry x="17" y="450" width="191" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="c2" source="n3" target="n4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="c2" source="n4" target="n5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="audit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="c2" source="n5" target="n6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="Secret Backends" style="swimlane;startSize=30;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=14;fontStyle=1;rounded=1;arcSize=4;" parent="1" vertex="1">
+          <mxGeometry x="560" y="30" width="195" height="595" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" value="🔐 Vault on-prem" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;fontColor=#ffffff;strokeColor=#d35400;fontSize=12;arcSize=10;" parent="c3" vertex="1">
+          <mxGeometry x="17" y="45" width="161" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" value="🔐 Vault cloud" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;fontColor=#ffffff;strokeColor=#d35400;fontSize=12;arcSize=10;" parent="c3" vertex="1">
+          <mxGeometry x="17" y="165" width="161" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" value="☁️ AWS Secrets Manager" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;fontColor=#ffffff;strokeColor=#d35400;fontSize=12;arcSize=10;" parent="c3" vertex="1">
+          <mxGeometry x="17" y="285" width="161" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" value="🔷 Azure Key Vault" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e67e22;fontColor=#ffffff;strokeColor=#d35400;fontSize=12;arcSize=10;" parent="c3" vertex="1">
+          <mxGeometry x="17" y="450" width="161" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="workload metadata" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n2" target="n3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="on-prem" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n5" target="n7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="cloud" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n5" target="n8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="aws" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n5" target="n9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" value="azure" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n5" target="n10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="secret resolvido" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="c3" target="n2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="658" y="690" />
+              <mxPoint x="128" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
